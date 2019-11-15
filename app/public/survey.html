@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- style and links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
@@ -22,8 +23,8 @@
 </head>
 
 <body>
+    <!-- survey questions -->
     <div class="container">
-
         <h1>Survey</h1>
         <hr>
         <form>
@@ -279,15 +280,19 @@
         </form>
     </div>
 
+    <!-- javascript -->
     <script text="text/javascript">
 
+    //confirms if all inputs filled
         function valid(newFriend) {
+            //checks to see if text fields full
             for (const property in newFriend) {
                 if (newFriend[property] === "") {
                     newFriend = {};
                     return false;
                 }
             }
+            //checks to see if radio buttons unchecked
             for (let i = 0; i < newFriend.answers.length; i++) {
                 if (newFriend.answers[i] === undefined) {
                     return false;
@@ -298,6 +303,7 @@
 
         }
 
+        //creates new object based on user input
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
             var newFriend = {
@@ -315,10 +321,10 @@
                 $("input[name*='q10Options']:checked").val()]
             };
 
+            //prevents empty fields in new friend object
             if (!valid(newFriend)) {
                 console.log("Please fill out fields before submitting!");
             } else { console.log(newFriend); }
-
 
         });
     </script>

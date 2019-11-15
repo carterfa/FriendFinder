@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .row {
+            text-align: center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Friend Finder</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Survey</h1>
+        <hr>
+        <form>
+            <div class="form-group">
+                <label>
+                    <h3>Your Name (required)</h3>
+                </label>
+                <input type="text" class="form-control" id="name" aria-describedby="name">
+            </div>
+            <div class="form-group">
+                <label>
+                    <h3>Image URL (required)</h3>
+                </label>
+                <input type="text" class="form-control" id="imageURL" aria-describedby="name">
+            </div>
+            <div class="form-group" id="q1">
+                <h3>Question 1: I prefer to spend time outdoors.</h3>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q1Options" value="1">
+                    <label>1 (Strongly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q1Options" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q1Options" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q1Options" value="4">
+                    <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q1Options" value="5">
+                    <label>5 (Strongly Agree)</label>
+                </div>
+            </div>
+
+            <div class="form-group" id="q2">
+                <h3>Question 2: I enjoy caring for animals.</h3>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q2Options" value="1">
+                    <label>1 (Strongly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q2Options" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q2Options" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q2Options" value="4">
+                    <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q2Options" value="5">
+                    <label>5 (Strongly Agree)</label>
+                </div>
+            </div>
+            <div class="form-group" id="q3">
+                <h3>Question 3: It's fun to try out new, exotic foods.</h3>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q3Options" value="1">
+                    <label>1 (Strongly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q3Options" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q3Options" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q3Options" value="4">
+                    <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q3Options" value="5">
+                    <label>5 (Strongly Agree)</label>
+                </div>
+            </div>
+            <div class="form-group" id="q4">
+                <h3>Question 4: I prefer loud, upbeat music.</h3>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q4Options" value="1">
+                    <label>1 (Strongly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q4Options" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q4Options" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q4Options" value="4">
+                    <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q4Options" value="5">
+                    <label>5 (Strongly Agree)</label>
+                </div>
+            </div>
+            <div class="form-group" id="q5">
+                <h3>Question 5: I'm always busy and I like it that way.</h3>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q5Options" value="1">
+                    <label>1 (Strongly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q5Options" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q5Options" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q5Options" value="4">
+                    <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q5Options" value="5">
+                    <label>5 (Strongly Agree)</label>
+                </div>
+            </div>
+
+            <div class="form-group" id="q6">
+                <h3>Question 6: Science is one of my favorite topics.</h3>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q6Options" value="1">
+                    <label>1 (Strongly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q6Options" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q6Options" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q6Options" value="4">
+                    <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q6Options" value="5">
+                    <label>5 (Strongly Agree)</label>
+                </div>
+            </div>
+
+            <div class="form-group" id="q7">
+                <h3>Question 7: I hate changes in my routine.</h3>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q7Options" value="1">
+                    <label>1 (Strongly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q7Options" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q7Options" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q7Options" value="4">
+                    <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q7Options" value="5">
+                    <label>5 (Strongly Agree)</label>
+                </div>
+            </div>
+
+            <div class="form-group" id="q8">
+                <h3>Question 8: I love to read.</h3>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q8Options" value="1">
+                    <label>1 (Strongly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q8Options" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q8Options" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q8Options" value="4">
+                    <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q8Options" value="5">
+                    <label>5 (Strongly Agree)</label>
+                </div>
+            </div>
+
+            <div class="form-group" id="q9">
+                <h3>Question 9: I work out and do other fitness activities regularly.</h3>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q9Options" value="1">
+                    <label>1 (Strongly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q9Options" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q9Options" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q9Options" value="4">
+                    <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q9Options" value="5">
+                    <label>5 (Strongly Agree)</label>
+                </div>
+            </div>
+
+            <div class="form-group" id="q10">
+                <h3>Question 10: I love being around lots of people.</h3>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q10Options" value="1">
+                    <label>1 (Strongly Disagree)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q10Options" value="2">
+                    <label>2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q10Options" value="3">
+                    <label>3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q10Options" value="4">
+                    <label>4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="q10Options" value="5">
+                    <label>5 (Strongly Agree)</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary" id="submitBtn">Submit</button>
+        </form>
+    </div>
+
+    <script text="text/javascript">
+        $("#submitBtn").on("click", function (event) {
+            event.preventDefault();
+            var newFriend = {
+                name: $("#name").val().trim(),
+                picture: $("#imageURL").val().trim(),
+                answers: [$("input[name*='q1Options']:checked").val(),
+                $("input[name*='q2Options']:checked").val(),
+                $("input[name*='q3Options']:checked").val(),
+                $("input[name*='q4Options']:checked").val(),
+                $("input[name*='q5Options']:checked").val(),
+                $("input[name*='q6Options']:checked").val(),
+                $("input[name*='q7Options']:checked").val(),
+                $("input[name*='q8Options']:checked").val(),
+                $("input[name*='q9Options']:checked").val(),
+                $("input[name*='q10Options']:checked").val()]
+            };
+
+            for (const property in object) {
+                if (object[property] === ""){
+                    console.log("Please fill out all fields before submitting!");
+                    newFriend = {};
+                };
+            }
+
+
+            console.log(newFriend);
+        });
+    </script>
+</body>
+
+</html>

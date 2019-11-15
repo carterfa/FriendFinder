@@ -280,6 +280,24 @@
     </div>
 
     <script text="text/javascript">
+
+        function valid(newFriend) {
+            for (const property in newFriend) {
+                if (newFriend[property] === "") {
+                    newFriend = {};
+                    return false;
+                }
+            }
+            for (let i = 0; i < newFriend.answers.length; i++) {
+                if (newFriend.answers[i] === undefined) {
+                    return false;
+                }
+            }
+
+            return true;
+
+        }
+
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
             var newFriend = {
@@ -297,15 +315,11 @@
                 $("input[name*='q10Options']:checked").val()]
             };
 
-            for (const property in object) {
-                if (object[property] === ""){
-                    console.log("Please fill out all fields before submitting!");
-                    newFriend = {};
-                };
-            }
+            if (!valid(newFriend)) {
+                console.log("Please fill out fields before submitting!");
+            } else { console.log(newFriend); }
 
 
-            console.log(newFriend);
         });
     </script>
 </body>

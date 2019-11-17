@@ -282,8 +282,7 @@
 
     <!-- javascript -->
     <script text="text/javascript">
-
-    //confirms if all inputs filled
+        //confirms if all inputs filled
         function valid(newFriend) {
             //checks to see if text fields full
             for (const property in newFriend) {
@@ -324,8 +323,12 @@
             //prevents empty fields in new friend object
             if (!valid(newFriend)) {
                 console.log("Please fill out fields before submitting!");
-            } else { console.log(newFriend); }
+            } else {
+                $.post("/api/friends", newFriend).then(function (data) {
+                    alert("Finding your newfriend...");
+                });
 
+            }
         });
     </script>
 </body>

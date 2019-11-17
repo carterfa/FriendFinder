@@ -18,7 +18,6 @@
             text-align: center;
         }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Friend Finder</title>
 </head>
 
@@ -281,6 +280,13 @@
     </div>
 
     <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script text="text/javascript">
         //confirms if all inputs filled
         function valid(newFriend) {
@@ -292,8 +298,8 @@
                 }
             }
             //checks to see if radio buttons unchecked
-            for (let i = 0; i < newFriend.answers.length; i++) {
-                if (newFriend.answers[i] === undefined) {
+            for (let i = 0; i < newFriend.scores.length; i++) {
+                if (newFriend.scores[i] === undefined) {
                     return false;
                 }
             }
@@ -306,9 +312,9 @@
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
             var newFriend = {
-                name: $("#name").val().trim(),
-                picture: $("#imageURL").val().trim(),
-                answers: [$("input[name*='q1Options']:checked").val(),
+                "name": $("#name").val().trim(),
+                "picture": $("#imageURL").val().trim(),
+                "scores": [$("input[name*='q1Options']:checked").val(),
                 $("input[name*='q2Options']:checked").val(),
                 $("input[name*='q3Options']:checked").val(),
                 $("input[name*='q4Options']:checked").val(),
@@ -325,7 +331,7 @@
                 console.log("Please fill out fields before submitting!");
             } else {
                 $.post("/api/friends", newFriend).then(function (data) {
-                    alert("Finding your newfriend...");
+                    console.log(data);
                 });
 
             }

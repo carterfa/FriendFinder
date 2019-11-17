@@ -1,8 +1,8 @@
 var list = [
     
     {
-    "name":"Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name":"Ibrahim",
+    "photo":"Ibrahim.jpg",
     "scores":[
         5,
         1,
@@ -35,6 +35,24 @@ var list = [
   },
 
   {
+    "name":"Paulie",
+    "photo":"loveseverything.jpg",
+    "scores":[
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+  },
+
+
+  {
     "name":"John",
     "photo":"man.jpg",
     "scores":[
@@ -48,6 +66,23 @@ var list = [
         2,
         3,
         5
+      ]
+  },
+
+  {
+    "name":"Nancy",
+    "photo":"hateseverything.jpg",
+    "scores":[
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
       ]
   }
 

@@ -8,7 +8,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 //Static url
-//app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static('app/public'));
 
 //Data parsing
 app.use(express.json());
@@ -41,6 +41,7 @@ app.post("/api/friends", function (req, res) {
         
             }
         
+            //change match if difference is less than current difference
             if (totalDifference < currentDifference) {
                 match = friends[j];
                 currentDifference = totalDifference;
@@ -51,7 +52,7 @@ app.post("/api/friends", function (req, res) {
         return match;
         
         }
-
+    //sends data to front end
     res.send(findFriend(newFriend, friends));
 
 })

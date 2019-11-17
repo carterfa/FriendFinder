@@ -1,8 +1,8 @@
 var list = [
     
     {
-    "name":"Ibrahim",
-    "photo":"Ibrahim.jpg",
+    "name":"Bill Murray",
+    "photo":"https://www.fillmurray.com/360/360",
     "scores":[
         5,
         1,
@@ -18,8 +18,8 @@ var list = [
   },
 
   {
-    "name":"Taminah",
-    "photo":"something.jpg",
+    "name":"Nicolas Cage",
+    "photo":"https://www.placecage.com/360/360",
     "scores":[
         2,
         5,
@@ -35,8 +35,8 @@ var list = [
   },
 
   {
-    "name":"Paulie",
-    "photo":"loveseverything.jpg",
+    "name":"Kittens",
+    "photo":"https://placekitten.com/360/360",
     "scores":[
         5,
         5,
@@ -53,25 +53,8 @@ var list = [
 
 
   {
-    "name":"John",
-    "photo":"man.jpg",
-    "scores":[
-        4,
-        2,
-        1,
-        1,
-        5,
-        1,
-        2,
-        2,
-        3,
-        5
-      ]
-  },
-
-  {
-    "name":"Nancy",
-    "photo":"hateseverything.jpg",
+    "name":"Some Meat",
+    "photo":"https://baconmockup.com/360/360",
     "scores":[
         1,
         1,
@@ -83,6 +66,40 @@ var list = [
         1,
         1,
         1
+      ]
+  },
+
+  {
+    "name":"A Bear",
+    "photo":"https://placebear.com/360/360",
+    "scores":[
+        3,
+        5,
+        4,
+        1,
+        2,
+        3,
+        1,
+        5,
+        3,
+        5
+      ]
+  },
+
+  {
+    "name":"John Beardman",
+    "photo":"https://placebeard.it/360x360",
+    "scores":[
+        4,
+        5,
+        3,
+        1,
+        2,
+        4,
+        1,
+        2,
+        1,
+        3
       ]
   }
 

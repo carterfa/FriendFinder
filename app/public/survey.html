@@ -17,13 +17,64 @@
         .row {
             text-align: center;
         }
+
+        .alert{
+            background-color: #c82333;
+            color: white;
+            margin: 0;
+        }
+
+        .friend{
+            background-color: #007bff;
+            color: white;
+            margin: 0;
+        }
+
     </style>
     <title>Friend Finder</title>
 </head>
 
 <body>
-    <!-- survey questions -->
+
+
     <div class="container">
+        
+        <!-- Alert Modal -->
+        <div class="modal" id="alertModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header alert">
+                        <h5 class="modal-title alert">ALERT</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modal-content">Please fill out all fields before submitting!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Friend Modal -->
+         <div class="modal" id="friendModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header friend">
+                            <h5 class="modal-title friend">Your new friend!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h4 id="friendName"></h4>
+                            <img id="friendImage" src=""></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- survey questions -->
         <h1>Survey</h1>
         <hr>
         <form>
@@ -306,14 +357,22 @@
 
             return true;
 
-        }
+        };
+
+        //modal close button
+        $(".close").on("click", function(event){
+
+            event.preventDefault();
+            $(".modal").hide();
+
+        });
 
         //creates new object based on user input
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
             var newFriend = {
                 "name": $("#name").val().trim(),
-                "picture": $("#imageURL").val().trim(),
+                "photo": $("#imageURL").val().trim(),
                 "scores": [$("input[name*='q1Options']:checked").val(),
                 $("input[name*='q2Options']:checked").val(),
                 $("input[name*='q3Options']:checked").val(),
@@ -328,10 +387,12 @@
 
             //prevents empty fields in new friend object
             if (!valid(newFriend)) {
-                console.log("Please fill out fields before submitting!");
+                $("#alertModal").show();
             } else {
                 $.post("/api/friends", newFriend).then(function (data) {
-                    console.log(data);
+                    $("#friendModal").show();
+                    $("#friendName").text(data.name);
+                    $("#friendImage").attr("src", data.photo);
                 });
 
             }

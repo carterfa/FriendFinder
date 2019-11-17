@@ -1,0 +1,25 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "Upon visiting Friend Finder, the user can choose to take a survey.  After completing the survey, Friend Finder will calculate the difference in answers from the user to an array of potential friends.  It will display to the user the friend that matched the answers to the survey the closest.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carterfa/FriendFinder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carterfa/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/carterfa/FriendFinder#readme"
+}

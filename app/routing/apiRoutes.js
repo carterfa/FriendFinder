@@ -1,5 +1,8 @@
+// Dependencies
+var friends = require("../data/friends");
+
 //display friends json
-app.get("/api/friends", function (req, res) {
+module.exports = function (app) {app.get("/api/friends", function (req, res) {
     return res.json(friends);
 })
 
@@ -38,3 +41,5 @@ app.post("/api/friends", function (req, res) {
     res.send(findFriend(newFriend, friends));
 
 })
+
+}
